@@ -1,6 +1,6 @@
-# stm32-robot-control-pcb
-Custom STM32F429-based robotics control PCB with motor drivers, sensors, camera interface, and multi-rail power regulation.
 # STM32F429 Robotics Control Board
+
+Custom STM32F429-based robotics control PCB with motor drivers, sensors, camera interface, and multi-rail power regulation.
 
 ## Overview
 This project is a custom STM32F429-based 100-pin control board designed for a mobile robotics platform. The board integrates motor control, sensing, and vision support while accounting for real-world power and signal integrity constraints common in robotics systems.
@@ -19,6 +19,12 @@ The project focused on full embedded hardware development, including:
 - Complete schematic capture
 - Power budgeting across motors, servos, logic, and peripherals
 - PCB layout and routing using Fusion 360
+
+## Schematic
+The complete system schematic is provided in `schematic/schematic.pdf`.
+
+### Schematic Note
+The schematic spans multiple pages due to the size and I/O density of the system. Functional blocks include power regulation, MCU core, motor drivers, communication interfaces, and sensor/camera headers.
 
 ## Power Architecture
 The board is powered from a 2S Li-ion/LiPo battery (~7.4 V nominal) and uses dedicated buck converters to generate regulated 5 V and 3.3 V rails. Peak motor and servo stall currents were explicitly considered during rail sizing, grounding strategy, and trace width selection to reduce noise coupling into sensitive logic and sensor domains.

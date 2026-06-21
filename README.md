@@ -2,10 +2,13 @@
 
 *An STM32-based mobile robotic platform featuring omnidirectional Mecanum-wheel locomotion, a multi-servo robotic arm, custom PCB hardware, Bluetooth communication, and mobile-app control.*
 
-Senior Design Capstone Project
+**Senior Design Capstone Project**
 California State University, East Bay
 CMPE 492 / CMPE 493 (2025–2026)
 
+> Optional: Add a photo of the completed robot or PCB here.
+
+---
 
 # Overview
 
@@ -36,8 +39,6 @@ Features include:
 * Expansion support for future sensor integration
 * Debug and programming interfaces
 
----
-
 ## Embedded Control System
 
 The STM32 firmware provides:
@@ -50,8 +51,6 @@ The STM32 firmware provides:
 
 An ESP32 module serves as a Bluetooth-to-UART bridge between the mobile application and the STM32 controller.
 
----
-
 ## Mobile Application Control
 
 A custom MIT App Inventor application enables wireless control of:
@@ -59,8 +58,6 @@ A custom MIT App Inventor application enables wireless control of:
 * Mecanum-wheel locomotion
 * Robotic arm movement
 * System operation through Bluetooth communication
-
----
 
 ## Multi-Rail Power Architecture
 

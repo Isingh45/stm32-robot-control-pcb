@@ -1,14 +1,13 @@
 # MecaArm Robotic Platform
 
-An STM32-based mobile robotic platform featuring omnidirectional Mecanum-wheel locomotion, a multi-servo robotic arm, custom PCB hardware, Bluetooth communication, and mobile-app control.
+*An STM32-based mobile robotic platform featuring omnidirectional Mecanum-wheel locomotion, a multi-servo robotic arm, custom PCB hardware, Bluetooth communication, and mobile-app control.*
 
 Senior Design Capstone Project
 California State University, East Bay
 CMPE 492 / CMPE 493 (2025–2026)
 
----
 
-## Overview
+# Overview
 
 MecaArm is a custom embedded robotics platform developed as a senior design capstone project. The project replaces vendor control electronics with a custom STM32-based control board, providing direct access to embedded hardware, motor control, communication interfaces, and power management.
 
@@ -16,11 +15,17 @@ The platform combines hardware design, embedded firmware development, Bluetooth 
 
 ---
 
-## Key Features
+# Repository Purpose
 
-### Custom 4-Layer PCB
+This repository preserves the hardware, firmware, documentation, and validation artifacts associated with the MecaArm Senior Design project.
 
-Designed, fabricated, assembled, and validated a custom 4-layer PCB centered around the STM32F429VET6 microcontroller.
+---
+
+# Key Features
+
+## Custom 4-Layer PCB
+
+Developed and validated a custom 4-layer PCB centered around the STM32F429VET6 microcontroller.
 
 Features include:
 
@@ -31,7 +36,9 @@ Features include:
 * Expansion support for future sensor integration
 * Debug and programming interfaces
 
-### Embedded Control System
+---
+
+## Embedded Control System
 
 The STM32 firmware provides:
 
@@ -43,7 +50,9 @@ The STM32 firmware provides:
 
 An ESP32 module serves as a Bluetooth-to-UART bridge between the mobile application and the STM32 controller.
 
-### Mobile Application Control
+---
+
+## Mobile Application Control
 
 A custom MIT App Inventor application enables wireless control of:
 
@@ -51,7 +60,9 @@ A custom MIT App Inventor application enables wireless control of:
 * Robotic arm movement
 * System operation through Bluetooth communication
 
-### Multi-Rail Power Architecture
+---
+
+## Multi-Rail Power Architecture
 
 The platform utilizes a dedicated power distribution architecture:
 
@@ -64,7 +75,7 @@ This separation helps isolate high-current motor loads from sensitive logic circ
 
 ---
 
-## Demonstrated Functionality
+# Demonstrated Functionality
 
 The completed system successfully demonstrated:
 
@@ -79,7 +90,7 @@ The completed system successfully demonstrated:
 
 ---
 
-## System Architecture
+# System Architecture
 
 ```text
 Mobile App
@@ -97,9 +108,9 @@ Motors + Servos
 
 ---
 
-## My Contributions
+# Inderpal Singh Contributions
 
-### Hardware Engineering
+## Hardware Engineering
 
 * Schematic capture support
 * PCB layout support
@@ -111,14 +122,14 @@ Motors + Servos
 * Hardware bring-up support
 * Power validation and debugging
 
-### Embedded Systems
+## Embedded Systems
 
 * STM32 firmware contribution
 * Motor-control implementation support
 * Bluetooth communication integration
 * Embedded system testing and validation
 
-### System Integration
+## System Integration
 
 * Hardware and firmware integration
 * Platform validation
@@ -127,67 +138,53 @@ Motors + Servos
 
 ---
 
-## Repository Structure
+# Repository Structure
 
 ```text
 Documentation/
-├── Final Report
-└── Final Presentation
+├── MecaArm_Final_Report.pdf
+└── CMPE493_Final_Presentation.pptx
 
 Hardware/
-├── Schematic Files
-├── PCB Layout Files
-├── Fusion Design Files
-├── Power Budget
-└── Bill of Materials
+├── MecaArm_Final.sch
+├── MecaArm_Final.brd
+├── MecaArm_Final.f3z
+├── Power_Budget.xlsx
+└── Final_BOM.xlsx
 
 Firmware/
-├── STM32 Firmware
-└── ESP32 Bluetooth Bridge
+├── mecaArm_5_7_stm32.pdf
+└── mecaArm_5_7_esp32.pdf
 
 Mobile-App/
-└── MIT App Inventor Project
+└── MecaArm.aia
 
 Validation/
-└── Demonstration Video
+└── MecaArm_App_Control_Demo.3gpp
 ```
 
 ---
 
-## Technologies
+# Technologies
 
-### Hardware
-
-* STM32F429VET6
-* ESP32-WROOM-32
-* RT7258 Buck Converters
-* TB6612FNG Motor Drivers
-* Mecanum Drive Platform
-* Multi-Servo Robotic Arm
-
-### Software & Firmware
-
-* C
-* STM32 HAL
-* STM32CubeMX
-* UART Communication
-* Bluetooth SPP
-
-### Development Tools
-
-* Fusion 360 Electronics
-* MIT App Inventor
-* ST-Link Debugging Tools
+| Category          | Technologies                                      |
+| ----------------- | ------------------------------------------------- |
+| Hardware          | STM32F429VET6, ESP32-WROOM-32, RT7258, TB6612FNG  |
+| Firmware          | C, STM32 HAL, STM32CubeMX                         |
+| Communication     | UART, Bluetooth SPP                               |
+| Development Tools | Fusion 360 Electronics, MIT App Inventor, ST-Link |
 
 ---
 
-## Notes
+# Notes
 
 The custom PCB includes provisions for future expansion, including sensor and peripheral interfaces. While these interfaces were incorporated into the hardware design, the final demonstrated system focused on locomotion, robotic arm control, Bluetooth communication, embedded control, and full-system integration.
 
+Interfaces for future development were included in the hardware architecture; however, features such as camera integration, IMU-based control, ultrasonic sensing, and autonomous navigation were not fully implemented in the final project demonstration.
+
 ---
 
-## Project Team
+# Project Team
 
 * Inderpal Singh
 * Sukhpinder Singh

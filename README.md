@@ -84,7 +84,7 @@ The completed system successfully demonstrated:
 * ESP32-to-STM32 communication
 * Mecanum-wheel movement
 * Multi-servo robotic arm control
-* Custom PCB operation
+* Custom PCB validation
 * Stable multi-rail power delivery
 * End-to-end hardware and firmware integration
 

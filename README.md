@@ -1,192 +1,127 @@
 # MecaArm Robotic Platform
 
-*An STM32-based mobile robotic platform featuring omnidirectional Mecanum-wheel locomotion, a multi-servo robotic arm, custom PCB hardware, Bluetooth communication, and mobile-app control.*
+## Overview
 
-**Senior Design Capstone Project**
-California State University, East Bay
-CMPE 492 / CMPE 493 (2025–2026)
+MecaArm is an STM32-based mobile robotic platform developed as the Senior Design Capstone project for **CMPE 492 / CMPE 493** at **California State University, East Bay**.
 
-> Optional: Add a photo of the completed robot or PCB here.
+The platform integrates omnidirectional Mecanum-wheel locomotion, a multi-servo robotic arm, a custom four-layer PCB, embedded firmware, Bluetooth communication, and a mobile application into a complete robotics system.
 
----
-
-# Overview
-
-MecaArm is a custom embedded robotics platform developed as a senior design capstone project. The project replaces vendor control electronics with a custom STM32-based control board, providing direct access to embedded hardware, motor control, communication interfaces, and power management.
-
-The platform combines hardware design, embedded firmware development, Bluetooth communication, mobile-app integration, and system-level validation into a single robotics platform.
+The project demonstrates end-to-end embedded systems engineering by combining custom hardware design, firmware development, wireless communication, power electronics, and system-level validation.
 
 ---
 
-# Repository Purpose
+## Technologies
 
-This repository preserves the hardware, firmware, documentation, and validation artifacts associated with the MecaArm Senior Design project.
-
----
-
-# Key Features
-
-## Custom 4-Layer PCB
-
-Developed and validated a custom 4-layer PCB centered around the STM32F429VET6 microcontroller.
-
-Features include:
-
-* Multi-rail power architecture
-* Motor driver integration
-* Servo interfaces
-* Bluetooth communication interface
-* Expansion support for future sensor integration
-* Debug and programming interfaces
-
-## Embedded Control System
-
-The STM32 firmware provides:
-
-* PWM motor control
-* Servo control
-* UART communication
-* Bluetooth command processing
-* Real-time actuator control
-
-An ESP32 module serves as a Bluetooth-to-UART bridge between the mobile application and the STM32 controller.
-
-## Mobile Application Control
-
-A custom MIT App Inventor application enables wireless control of:
-
-* Mecanum-wheel locomotion
-* Robotic arm movement
-* System operation through Bluetooth communication
-
-## Multi-Rail Power Architecture
-
-The platform utilizes a dedicated power distribution architecture:
-
-* 7.4V battery rail
-* Independent 5V motor rail
-* Independent 5V auxiliary rail
-* Dedicated 3.3V logic rail
-
-This separation helps isolate high-current motor loads from sensitive logic circuitry and communication interfaces.
+* STM32F429VET6
+* ESP32-WROOM-32
+* C
+* STM32 HAL
+* STM32CubeMX
+* Bluetooth (UART)
+* PWM Motor Control
+* Fusion 360 Electronics
+* MIT App Inventor
+* RT7258 Buck Regulators
+* TB6612FNG Motor Drivers
 
 ---
 
-# Demonstrated Functionality
-
-The completed system successfully demonstrated:
-
-* Bluetooth communication
-* Mobile application control
-* ESP32-to-STM32 communication
-* Mecanum-wheel movement
-* Multi-servo robotic arm control
-* Custom PCB validation
-* Stable multi-rail power delivery
-* End-to-end hardware and firmware integration
-
----
-
-# System Architecture
+## System Architecture
 
 ```text
-Mobile App
-     ↓
-Bluetooth
-     ↓
-ESP32 Bridge
-     ↓
-UART
-     ↓
-STM32F429VET6
-     ↓
-Motors + Servos
+MIT App Inventor Mobile App
+             │
+        Bluetooth
+             │
+      ESP32-WROOM-32
+             │
+      UART (115200 baud)
+             │
+      STM32F429VET6
+      ┌───────────────┐
+      │               │
+      ▼               ▼
+DC Motor Drivers   Servo Control
+(TB6612FNG)        (PWM Timers)
+      │               │
+      ▼               ▼
+Mecanum Drive     Robotic Arm
 ```
 
 ---
 
-# Inderpal Singh Contributions
+## Features
 
-## Hardware Engineering
+* **Custom Four-Layer PCB:** Designed a custom four-layer PCB centered around the STM32F429VET6 microcontroller with dedicated power distribution, motor drivers, communication interfaces, and debugging support.
 
-* Schematic capture support
-* PCB layout support
-* Power architecture design
-* RT7258 regulator integration
-* Power budget analysis
-* Decoupling strategy implementation
-* Manufacturing preparation
-* Hardware bring-up support
-* Power validation and debugging
+* **Omnidirectional Mecanum Drive:** Controls four independently driven Mecanum wheels using PWM motor control and dual TB6612FNG motor drivers for omnidirectional robot movement.
 
-## Embedded Systems
+* **Robotic Arm Control:** Controls a multi-servo robotic arm using STM32 hardware timers and PWM signals for coordinated actuator movement.
 
-* STM32 firmware contribution
-* Motor-control implementation support
-* Bluetooth communication integration
-* Embedded system testing and validation
+* **Bluetooth Wireless Communication:** Uses an ESP32 as a Bluetooth-to-UART bridge, allowing a custom MIT App Inventor mobile application to wirelessly control the robot.
 
-## System Integration
+* **Embedded Firmware:** Developed STM32 firmware using STM32 HAL to manage motor control, servo control, UART communication, and command processing.
 
-* Hardware and firmware integration
-* Platform validation
-* Demonstration testing
-* End-to-end system verification
+* **Multi-Rail Power Architecture:** Designed dedicated power rails for motors, auxiliary peripherals, and logic circuitry to improve electrical stability and isolate high-current motor loads from sensitive electronics.
+
+* **System Integration and Validation:** Successfully demonstrated integrated hardware, firmware, Bluetooth communication, mobile application control, robotic locomotion, and robotic arm operation.
 
 ---
 
-# Repository Structure
+## Repository Structure
 
 ```text
 Documentation/
-├── MecaArm_Final_Report.pdf
-└── CMPE493_Final_Presentation.pptx
+├── Final Project Report
+└── Final Presentation
 
 Hardware/
-├── MecaArm_Final.sch
-├── MecaArm_Final.brd
-├── MecaArm_Final.f3z
-├── Power_Budget.xlsx
-└── Final_BOM.xlsx
+├── PCB Schematic
+├── PCB Layout
+├── Fusion 360 Design
+├── Bill of Materials
+└── Power Budget
 
 Firmware/
-├── mecaArm_5_7_stm32.pdf
-└── mecaArm_5_7_esp32.pdf
+├── STM32 Firmware
+└── ESP32 Bluetooth Bridge
 
 Mobile-App/
-└── MecaArm.aia
+└── MIT App Inventor Application
 
 Validation/
-└── MecaArm_App_Control_Demo.3gpp
+└── System Demonstration Video
 ```
 
 ---
 
-# Technologies
+## What I Learned
 
-| Category          | Technologies                                      |
-| ----------------- | ------------------------------------------------- |
-| Hardware          | STM32F429VET6, ESP32-WROOM-32, RT7258, TB6612FNG  |
-| Firmware          | C, STM32 HAL, STM32CubeMX                         |
-| Communication     | UART, Bluetooth SPP                               |
-| Development Tools | Fusion 360 Electronics, MIT App Inventor, ST-Link |
-
----
-
-# Notes
-
-The custom PCB includes provisions for future expansion, including sensor and peripheral interfaces. While these interfaces were incorporated into the hardware design, the final demonstrated system focused on locomotion, robotic arm control, Bluetooth communication, embedded control, and full-system integration.
-
-Interfaces for future development were included in the hardware architecture; however, features such as camera integration, IMU-based control, ultrasonic sensing, and autonomous navigation were not fully implemented in the final project demonstration.
+* Designing custom embedded hardware using a four-layer PCB.
+* Developing embedded firmware with STM32 HAL and hardware timers.
+* Implementing Bluetooth communication between mobile devices and embedded systems.
+* Integrating power electronics, embedded software, wireless communication, and robotic actuators.
+* Performing hardware bring-up, debugging, validation, and complete system integration.
 
 ---
 
-# Project Team
+## Future Improvements
+
+* Add wheel encoder feedback for closed-loop motor control.
+* Implement inverse kinematics for robotic arm positioning.
+* Integrate ROS 2 for higher-level robot control.
+* Add onboard sensors for autonomous navigation.
+* Expand the platform with additional perception modules.
+
+---
+
+## Authors
 
 * Inderpal Singh
 * Sukhpinder Singh
 * Feranmi Falodun
 * Pierreline Jacob
 
-California State University, East Bay
-Department of Engineering
+**California State University, East Bay**
+
+**CMPE 492 / CMPE 493 – Senior Design Capstone (2025–2026)**
